@@ -30,5 +30,12 @@
   	<servlet-name>MasterJSONServlet</servlet-name>
   	<!-- We can use the * to specify multiple mappings -->
   	<url-pattern>/api/*</url-pattern>
+  	<url-pattern>/getSession</url-pattern>
+  	<url-pattern>/getUser</url-pattern>
+  	<url-pattern>/doLogout</url-pattern>
+  	<url-pattern>/getAllById</url-pattern>
+  	<url-pattern>/getAllReimbursements</url-pattern>
+  	<url-pattern>/filterByStatus</url-pattern>
+  	<url-pattern>/addNewReimbursement</url-pattern>
   </servlet-mapping>
 </web-app>

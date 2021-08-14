@@ -1,22 +1,16 @@
-/**
- * 
- */
-let form = document.getElementById("login").addEventListener('submit', login);
 
-async function login(e){
+const login = async (e) => {
 	e.preventDefault();
-	let username = document.getElementById("username").value;
-	let password = document.getElementById("password").value;
+	let uname = document.getElementById('username').value;
+	let pass = document.getElementById('password').value;
 	
-	let user = { 
-		username,
-		password
-	}
+
+	let user = {
+		username: uname,
+		password: pass,
+	};
+
 	
-	console.log(user);
-	
-	
-	try{
 		let req = await fetch('http://localhost:8080/RESProject1/api/login', {
 			method: 'POST',
 			headers: {
@@ -24,15 +18,30 @@ async function login(e){
 			},
 			body: JSON.stringify(user)
 		});
-		let res = await req.text();
-		console.log(res);
-		
-	} catch(e){
-		
-		console.log(e.stack);
-		alert('Username or password incorrect!');
+		if (req.status !== 200) {
+		alert("Username or password are incorrect");
 		return;
 	}
+	else {
+		let res = await req.text();
+		
+		if (res.uRole == 'Manager') { 
+		//if (res.uRole == 'Manager') { 
+			location.href = 'resources/html/employee-dashboard.html';
+		
+      
+		} else {
+			location.href = 'resources/html/manager-dashboard.html';
+			 
+			//location.href = 'resources/html/manager-dashboard.html';
+			
+			
+		}
+		
+	} 
 	
-	//location.href = 'resources/html/SocialHub.html';
+
+
 }
+document.getElementById('submit').addEventListener('click', login);
+

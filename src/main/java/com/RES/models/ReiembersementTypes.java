@@ -26,6 +26,7 @@ public class ReiembersementTypes {
 	@Column(name = "reimb_type")
 	private String reimb_Type;
 	@OneToMany(mappedBy = "RembType", fetch = FetchType.LAZY)
+	
 	private List<Reiembersement> reimList = new ArrayList<Reiembersement>();
 	
 	public ReiembersementTypes() {

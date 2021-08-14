@@ -2,8 +2,11 @@ package com.RES.Dao;
 
 import java.util.List;
 
+//import javax.persistence.Query;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import com.ERS.Utils.HibernateUtils;
 import com.RES.models.Reiembersement;
@@ -48,4 +51,21 @@ public class ReimbersementDao {
 		List<Reiembersement> rList = ses.createQuery("from Reimbursement", Reiembersement.class).list();
 		return rList;
 	}
+
+	public List<Reiembersement> selectPendingReimb(){
+		Session ses = HibernateUtils.getSession();
+		List<Reiembersement> rList = ses.createQuery("from Reimbursement where Estatus_FK = 1", Reiembersement.class ).list();
+		return rList;
+	}
+	public ReiembersementTypes getReimbursementType(String ersType) {
+		Session ses = HibernateUtils.getSession();
+		ReiembersementTypes r = ses.createQuery("from ReimbursementType where ersType=" + ersType, ReiembersementTypes.class).uniqueResult();
+		return r;
+	}
+	public List<Reiembersement> selectByReimbursementStatus(String status) {
+		Session ses = HibernateUtils.getSession();
+		Query<Reiembersement> q = ses.createQuery("FROM Reimbursement WHERE ersStatus.status = '"+status+"'",Reiembersement.class);
+		return q.list();
+	}
+	
 }

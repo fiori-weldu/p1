@@ -1,0 +1,182 @@
+:root{
+   --primary-color: #ffffff;
+   --secondary-color: #9cc9dc;
+   --third-color: #A39B8B;
+   --fourth-color: #07020D;
+   --fifth-color: #F1E9DB;
+}
+
+/* UNIVERAL PAGES */
+
+*{
+	  font-family: 'News Cycle', sans-serif;
+	   box-sizing: border-box;
+	   color: var(--fourth-color);
+	   background-color: var( --fifth-color); 
+}
+
+input{
+	text-align: center;
+	border: 2px solid var( --third-color);
+	color: var( --third-color);
+	text-decoration: none;
+	background-color: var(--primary-color); 
+	width: 450px;
+	height: 35px;
+}
+
+label{
+	padding:10px;
+	display: block;	
+}
+
+#body{
+ 
+	  background-color: var( --fifth-color);
+}  
+
+.button{
+	text-align: center;
+	border: 2px solid var( --third-color);
+	color: var( --fourth-color);
+	text-decoration: none;
+	background-color: var(--primary-color); 
+	width: 500px;
+	height: 50px;
+} 
+
+.container{
+	margin: auto;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	padding: 15px 15px;
+	
+}
+
+div.header{
+	text-align: center;
+}
+
+
+/* LANDING PAGE */
+
+.form-container{
+	margin: auto;
+	display:block;
+}
+
+
+.btn-container a{
+    display: block;
+    padding: 15px;
+    text-align: center;
+}
+
+/* LOGIN */
+
+.smt-btn{
+	color: black;
+	display: block;
+    margin-top: 25px;
+    border: 2px solid var( --fourth-color);
+    width: 450px;
+    height: 40px;
+}
+
+
+.smt-btn:hover{
+	 border: 2px solid var(  --third-color);
+}
+
+.form{
+	align-items: center;
+	box-sizing: border-box;
+	display: table-caption;
+}
+
+.grid{
+	display: grid;
+	margin: 25px;
+}
+
+.card{
+	padding: 32px;	
+}
+
+.label{
+	padding:25px;
+}
+
+/* EMPLOYEE PAGE */
+
+.nav-item{
+	list-style-type: none;
+	text-decoration: none; 
+	padding: 10px 5px;
+    margin: 10px 10px;
+} 
+
+#nav-item a{
+	color: var(--fourth-color);
+	font-size: 20px;
+	border: 2px solid var(--third-color);
+	background-color: var(--primary-color);
+}
+
+.btn{
+	margin: 25px;
+    display: block;
+    width: 400px;
+    height: 50px;
+    background-color: var(--primary-color);
+    border: 2px solid var( --third-color);
+}
+
+.btn:hover{
+	border: 2px solid var( --fourth-color);
+}
+
+#nav-item#logout{
+		border: 2px solid var(--third-color);
+	background-color: var(--primary-color);
+}
+
+#input{
+	 margin-bottom: 15px;
+}
+
+#container-e-services{
+	display: flex;
+    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 30px;
+    padding: 20px 250px;
+   
+}
+
+#eServ-form{
+	display: flex;
+	flex-direction: column;
+}
+
+div#radio-opts{
+	display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+
+label#radio-label{
+	padding: 5px;
+	font-size: 14px;
+    margin: 10px;
+}
+
+input#radio-option{
+	height: 20px;
+	width: 20px;
+	vertical-align: middle
+}

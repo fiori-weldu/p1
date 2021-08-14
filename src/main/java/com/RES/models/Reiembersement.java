@@ -78,6 +78,23 @@ public class Reiembersement {
 		ReimbStatus = reimbStatus;
 	}
 
+	public Reiembersement(Users remAuthor, int reimbursement_amt2, Date reimbursement_submt2,
+			String reimbursement_despt2, ReiembersementTypes rembType2, ReiembersementStatus reimbStatus2) {
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public Reiembersement(int reimbursement_amt, Date reimbursement_submt, String reimbursement_despt, Users remAuthor,
+			ReiembersementTypes rembType, ReiembersementStatus reimbStatus) {
+		super();
+		this.reimbursement_amt = reimbursement_amt;
+		this.reimbursement_submt = reimbursement_submt;
+		this.reimbursement_despt = reimbursement_despt;
+		RemAuthor = remAuthor;
+		RembType = rembType;
+		ReimbStatus = reimbStatus;
+	}
+
 
 
 	public Reiembersement(int reimbursement_id, int reimbursement_amt, Date reimbursement_submt,
@@ -95,6 +112,22 @@ public class Reiembersement {
 		RembType = rembType;
 		ReimbStatus = ReimbStatus;
 	}
+
+
+
+
+	public Reiembersement(Users u, int reimbAmount, String reimbSubmitted, String reimbDescription, Users author,
+			ReiembersementTypes ersType) {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+	public Reiembersement(Users rAuthor, int amt, String descp, ReiembersementTypes type) {
+		// TODO Auto-generated constructor stub
+	}
+
+
 
 	public int getReimbursement_id() {
 		return reimbursement_id;

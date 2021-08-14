@@ -21,8 +21,8 @@ public class ReiembersementStatus {
 	
 	@Column(name = "reimb_status")
 	private String reimb_status;
-	
 	@OneToMany(mappedBy = "ReimbStatus", fetch = FetchType.LAZY)
+	
 	private List<Reiembersement> reimList = new ArrayList<Reiembersement>();
 
 	public ReiembersementStatus() {

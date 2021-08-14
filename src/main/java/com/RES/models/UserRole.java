@@ -23,6 +23,7 @@ public class UserRole {
 	@Column(name = "reimb_role")
 	private String reRole;
 	@OneToMany(mappedBy="RembRole",fetch=FetchType.LAZY)
+	
 	private List<Users> userList=new ArrayList<Users>();
 	
 	public UserRole() {

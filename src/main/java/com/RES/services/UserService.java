@@ -48,10 +48,12 @@ private UserDao uDao;
 		}
 	}
 	
-	public Users getUsersById(int id) {
-		return uDao.selectByUserId(id);
+	public Users getUsersById(int userid) {
+		return uDao.selectByUserId(userid);
 	}
-	
+	public Users getAuthor(int author) {
+		return uDao.getAuthor(author);
+	}
 	
 	
 	

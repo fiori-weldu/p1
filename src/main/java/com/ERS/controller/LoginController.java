@@ -15,6 +15,7 @@ import com.RES.services.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 public class LoginController {
 	private static UserDao uDao = new UserDao();
@@ -44,12 +45,22 @@ public class LoginController {
 			Users u = uServ.signIn(username, password);
 			System.out.println(u);
 			//We will keep track of if the user is logged in by storing their id in the session
-			req.getSession().setAttribute("id", u.getId());
+			req.getSession().setAttribute("Id", u.getId());
+			String role = u.getRembRole().getReRole();
+			req.getSession().setAttribute("uRole", role);
+			//req.getSession().setAttribute("userRole", u.getRembRole().getRoleId());
 			res.setStatus(HttpServletResponse.SC_OK);
 			res.addHeader("Access-Control-Allow-Origin", "*");
 			res.setHeader("Access-Control-Allow-Methods", "POST");
 			//res.getWriter().write(new ObjectMapper().writeValueAsString(u));
 			res.getWriter().println("loged in");
+            ObjectNode user = mapper.createObjectNode();
+			
+	    	user.put("Id", u.getId());
+	    	user.put("uRole", role);
+	    	
+	    	res.getWriter().println("User signed in!");
+			//res.getWriter().write(new ObjectMapper().writeValueAsString(user));
 		}
 		catch(Exception e) {
 			e.printStackTrace();

@@ -25,14 +25,29 @@ public class ServletJSONHelper  {
 				LoginController.login(req, res);
 				break;
 			case "/RESProject1/api/logout":
-				LogoutController.logout(req, res);
+				LogoutController.doLogout(req, res);
 				break;
-//			case "/RESProject1/api/posts":
-//				ReimbursementController.handlePosts(req, res);
-//				break;
-//			case "/RESProject1/api/session":
-//				SessionController.getSession(req, res);
-//				break;
+			case "/RESProject1/RESProject1/getSession":
+				
+				SessionController.getSession(req, res);
+				break;
+				
+//			case "/ERS-Project1/getUser":
+//				GetUserController.getUser(req, res);
+				//break;
+			
+			case "/RESProject1/getAllReimbursements":
+				ReimbursementController.getAllReimbursements(req, res);
+				break;
+			case "/RESProject1/getAllById":
+				ReimbursementController.getAllById(req,res);
+				break;
+			case "/RESProject1/filterByStatus":
+				ReimbursementController.filterByStatus(req, res);
+				break;
+			case "/RESProject1/addNewReimbursement":
+				ReimbursementController.addNewReimbursement(req, res);
+				break;
 		}
 	}
 	

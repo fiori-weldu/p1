@@ -2,6 +2,7 @@ package com.RES.Dao;
 
 import java.util.List;
 
+import org.apache.catalina.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -40,6 +41,11 @@ public Users selectByUserId(int userId) {
 	Session ses = HibernateUtils.getSession();
 	Users user = ses.get(Users.class, userId);
 	return user;
+}
+public Users getAuthor(int author) {
+	Session ses = HibernateUtils.getSession();
+	Users r = ses.createQuery("FROM Reimbursement WHERE author=" + author, Users.class).uniqueResult();
+	return r;
 }
 
 @SuppressWarnings("deprecation")

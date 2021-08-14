@@ -41,13 +41,13 @@ public class ReimbersementDriver {
 	uDao.Insert(UR1);
 	uDao.Insert(UR2);
 	
- Users user1=new Users("Fiori", "weldu", "Fioritetemke@gmail.com","password",UR1);
+ Users user1=new Users("Fiori", "weldu", "Fioritetemke@gmail.com","fiori@2",UR1);
  uDao.Insert(user1);
  Users user2=new Users("Winta", "Tetemke", "Wintaw3@gmail.com", "password2",UR2);
  uDao.Insert(user2);
- Users user3=new Users("Samson","teklay","Samson34@gmail.com","samson34@gmail.com",UR1);
+ Users user3=new Users("Samson","teklay","Samson34@gmail.com","samson34",UR1);
  uDao.Insert(user3);
- Users user4=new Users("Bereket","Teklay","bereket@gmail.com","Password43@gmail.com",UR2);
+ Users user4=new Users("Bereket","Teklay","bereket@gmail.com","Password43",UR2);
  uDao.Insert(user4);
  
  
@@ -64,7 +64,7 @@ public class ReimbersementDriver {
    
   List<Users> u1=uDao.selectAllUsers();
   System.out.println(u1);
- Users u=uServ.signIn(user1.getUserName(), "password");
+ Users u=uServ.signIn(user1.getUserName(), "fiori@2");
  System.out.println(u);
       
 	

@@ -51,17 +51,19 @@ public class Users {
 		super();
 	}
 
-	public Users(String firstName, String lastName, String email, String password,UserRole RembRole) {
+	
+
+	public Users(String firstName, String lastName, String email, String password, UserRole rembRole) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.email = email;
 		this.userName = firstName + lastName + (new Random().nextInt(9000) + 1000);
+		this.email = email;
 		Password = password;
-		//RembRole = RembRole;
+		RembRole = rembRole;
 	}
 
-	
+
 
 	public Users(int id, String firstName, String lastName, String email, String userName, String password,
 			UserRole rembRole) {
@@ -168,7 +170,7 @@ public class Users {
 	@Override
 	public String toString() {
 		return "Users [Id=" + Id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", userName=" + userName + ", Password=" + Password + ", RembRole=" + RembRole + "]";
+				+ ", userName=" + userName + ", Password=" + Password + ", RembRole=" + RembRole.getRoleId()+ "]";
 	}
 	
 	
